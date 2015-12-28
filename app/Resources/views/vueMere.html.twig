@@ -1,0 +1,25 @@
+{# app/Resources/views/vueMere.html.twig #}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{% block title %} Biblinum {% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {% block header %}
+           <h1>Bienvenue sur ProStage</h1> 
+		   <h2>Les stages proposé pour le département Informatique</h2>
+        {% endblock %}
+	   
+        {% block menuPropreAuBundle %} 
+		{% endblock %}
+		
+        {% block contenuCentral %}
+		{% endblock %}
+		
+        {% block footer %} IUT de Bayonne département Informatique
+		{% endblock %}
+    </body>
+</html>

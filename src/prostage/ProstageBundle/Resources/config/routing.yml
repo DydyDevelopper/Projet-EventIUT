@@ -1,0 +1,3 @@
+prostage_prostage_accueil:
+    path:     /Prostage
+    defaults: { _controller: prostageProstageBundle:Prostage:index }
