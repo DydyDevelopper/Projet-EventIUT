@@ -1,0 +1,73 @@
+{% extends "::vueMere.html.twig" %} {#La vue fille 1 hérite de la vue mère #}
+{% block contenuCentral %} 
+<center>
+				<div class="row">
+
+					<div class="col-sm-12">
+					<center>
+                                <div class="form-group">
+                                    <div class="input-group input-group-md icon-addon">
+                                        <input type="text" placeholder=" Recherche par nom de salon" name="" id="schbox" class="form-control">
+                                        <i class="icon icon-search"></i>
+                                        <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-inverse">Rechercher</button>
+                                        </span>
+                                    </div>
+                                </div>
+					</center>
+					</div>
+
+				</div>
+				<br>
+{% endblock %}
+{% block menu %} 
+				<div class="row">
+					<div class="col-sm-12">
+					<table class="table">
+				
+					<ul class="nav nav-tabs nav-justified" id="myTab">
+					<li class="active"><a data-toggle="tab" href="#justifmenu1">Salons à venir</a></li>
+					<li><a data-toggle="tab" href="#justifmenu2">Salons passés</a></li>			
+	
+						<div id="justifmenu1" class="tab-pane fade">
+							<tr>
+								<td><strong>Nom</strong></td>
+								<td><strong>Date de début</strong></td>
+								<td><strong>Date de fin</strong></td>
+								<td><strong>Lieu</strong></td>
+								<td><strong>Horaire</strong></td>
+								<td><strong>Fin d'inscription</strong></td>
+								<td><strong>Inscrits</strong></td>
+								<td><strong>En attente</strong></td>	
+								<td><strong></strong></td>																
+							</tr>
+							<tr>
+								<td>Studyrama</td>
+								<td>19 Décembre 2015</td>
+								<td>19 Décembre 2015</td>
+								<td>Bayonne</td>
+								<td>8h00-17h00</td>
+								<td>12 Décembre 2015</td>
+								<td>4</td>
+								<td>0</td>	
+								<td><a href="http://iparla.iutbayonne.univ-pau.fr/~tlarzabal/EventIUT/web/app_dev.php/voirSalons" > <button type="submit" class="glyphicon glyphicon-chevron-right" ></button></a></td>								
+							</tr>
+							<tr>
+								<td>InfoSup</td>
+								<td>21 Décembre 2015</td>
+								<td>21 Décembre 2015</td>
+								<td>Mont de Marsan</td>
+								<td>10h00-19h00</td>
+								<td>14 Décembre 2015</td>
+								<td>2</td>
+								<td>3</td>	
+								<td><a href="http://iparla.iutbayonne.univ-pau.fr/~tlarzabal/EventIUT/web/app_dev.php/voirSalons" > <button type="submit" class="glyphicon glyphicon-chevron-right" ></button></a></td>																
+							</tr>
+						</div>
+						<div id="justifmenu1" class="tab-pane fade">
+						</div>
+				</table>
+						</div>			
+					</div>
+									
+{% endblock %}
