@@ -28,22 +28,22 @@ class Inscription
      * @ORM\ManyToOne(targetEntity="EventIUT\SalonsBundle\Entity\Salon")
      */
     private $salon;
-	
+
     /**
      * @ORM\ManyToOne(targetEntity="EventIUT\SalonsBundle\Entity\Responsable")
      */
     private $responsable;
-	
+
     /**
      * @ORM\ManyToOne(targetEntity="EventIUT\SalonsBundle\Entity\Etudiant")
      */
     private $etudiant;
-	
+
     /**
      * @ORM\ManyToOne(targetEntity="EventIUT\SalonsBundle\Entity\Enseignant")
      */
     private $enseignant;
-	
+
     /**
      * Get id
      *

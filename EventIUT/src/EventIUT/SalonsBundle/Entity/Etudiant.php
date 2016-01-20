@@ -53,7 +53,7 @@ class Etudiant
      * @ORM\ManyToMany(targetEntity="EventIUT\SalonsBundle\Entity\Formation")
      */
     private $formations;
-	
+
     /**
      * Get id
      *
