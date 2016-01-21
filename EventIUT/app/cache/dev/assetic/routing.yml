@@ -1,5 +1,0 @@
-_assetic:
-    resource: .
-    type: assetic
-_app:
-    resource: 'C:\wamp\www\Projet-EventIUT\EventIUT\app/config/routing_dev.yml'

@@ -1,0 +1,15 @@
+EventIUT\SalonsBundle\Entity\Formation:
+    type: entity
+    table: null
+    repositoryClass: EventIUT\SalonsBundle\Entity\FormationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        libelle:
+            type: string
+            length: '30'
+    lifecycleCallbacks: {  }

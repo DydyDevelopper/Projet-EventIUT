@@ -1,0 +1,16 @@
+EventIUT\SalonsBundle\Entity\Inscription:
+    type: entity
+    table: null
+    repositoryClass: EventIUT\SalonsBundle\Entity\InscriptionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        valider:
+            type: boolean
+        date:
+            type: date
+    lifecycleCallbacks: {  }
