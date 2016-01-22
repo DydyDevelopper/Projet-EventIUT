@@ -1,7 +1,0 @@
-event_iut_salons:
-    resource: "@EventIUTSalonsBundle/Resources/config/routing.yml"
-    prefix:   /
-
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
