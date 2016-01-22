@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: /users/web/info/dsezat/WWW/Projet-EventIUT/EventIUT/app/config/routing_dev.yml

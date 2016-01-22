@@ -1,0 +1,35 @@
+EventIUT\SalonsBundle\Entity\Salon:
+    type: entity
+    table: null
+    repositoryClass: EventIUT\SalonsBundle\Entity\SalonRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '30'
+        adresse:
+            type: string
+            length: '400'
+        complement:
+            type: string
+            length: 255
+        ville:
+            type: string
+            length: '50'
+        codePostal:
+            type: integer
+        description:
+            type: text
+        acces:
+            type: string
+            length: '400'
+        bilan:
+            type: text
+        dateLimite:
+            type: date
+    lifecycleCallbacks: {  }
