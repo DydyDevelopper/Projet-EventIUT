@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: kartxila.iutbayonne.univ-pau.fr
+    database_port: ~
+    database_name: tlarzabal
+    database_user: tlarzabal
+    database_password: tlarzabal
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: ~
+    mailer_password: ~
+    secret: ThisTokenIsNotSoSecretChangeIt

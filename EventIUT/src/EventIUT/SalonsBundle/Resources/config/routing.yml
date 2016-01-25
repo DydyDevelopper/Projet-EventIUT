@@ -1,0 +1,6 @@
+event_iut_salons_homepage:
+    path:     /Salons
+    defaults: { _controller: EventIUTSalonsBundle:Salons:index }
+event_iut_salons_voirSalons:
+    pattern:  /voirSalons
+    defaults: { _controller: EventIUTSalonsBundle:Salons:voirSalons } 

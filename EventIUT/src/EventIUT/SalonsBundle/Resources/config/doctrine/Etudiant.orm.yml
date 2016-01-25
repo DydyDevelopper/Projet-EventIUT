@@ -1,0 +1,31 @@
+EventIUT\SalonsBundle\Entity\Etudiant:
+    type: entity
+    table: null
+    repositoryClass: EventIUT\SalonsBundle\Entity\EtudiantRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: '30'
+        prenom:
+            type: string
+            length: '30'
+        login:
+            type: string
+            length: '15'
+        courriel:
+            type: string
+            length: '70'
+        motDePasse:
+            type: string
+            length: '12'
+        groupeTD:
+            type: integer
+        groupeTP:
+            type: integer
+    lifecycleCallbacks: {  }
