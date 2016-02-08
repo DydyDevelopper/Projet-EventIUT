@@ -1,4 +1,0 @@
-services:
-#    event_iut_salons.example:
-#        class: EventIUT\SalonsBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
