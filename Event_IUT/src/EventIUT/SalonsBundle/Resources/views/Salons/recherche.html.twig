@@ -1,0 +1,79 @@
+{% extends "::vueMere.html.twig" %} {#La vue fille 1 hérite de la vue mère #}
+{% block contenuCentral %} 
+<center>
+				<div class="row">
+              
+				
+				
+					<div class="col-sm-12">
+					<center>
+					<div class="col-sm-12">
+					<center>
+
+							
+					</center>
+					</div>
+					</center>
+					</div>
+
+				</div>
+				<br>
+{% endblock %}
+{% block menu %} 
+				<div class="row">
+					<div class="col-sm-12">
+											
+                                            {{requete}}
+											<table class="table">
+												<tr>
+													<td><strong>Nom  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></strong></td>
+													<td><strong>Date de début  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></strong></td>
+													<td><strong>Date de fin </strong></td>
+													<td><strong>Lieu  <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></strong></td>
+													<td><strong>Horaire</strong></td>
+													<td><strong>Fin d'inscription</strong></td>
+													<td><strong>Inscrits</strong></td>
+													<td><strong>En attente</strong></td>	
+													<td><strong></strong></td>																
+												</tr>
+												{% for salonCourant in tabSalons%}
+												<tr>
+													<td>{{salonCourant.nom}}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													{{dateSalon.date|date('d-m-Y')}}{% endfor %}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													{{dateSalon.date|date('d-m-Y')}}{% endfor %}
+													</td>
+													<td>{{salonCourant.ville}}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													{{dateSalon.heureDebut|date('H:i')}}-{{dateSalon.heureFin|date('H:i')}}{% endfor %}
+													</td>
+													<td>
+													{{salonCourant.dateLimite|date('d-m-Y')}}
+													</td>
+													<td>4</td>
+													<td>0</td>	
+													<td><a href="{{ path('event_iut_salons_voirSalons',{'id':salonCourant.id})}}" > <button type="submit" class="glyphicon glyphicon-chevron-right" ></button></a></td>								
+												</tr>
+												{% endfor %}										
+											</table>
+										
+										
+										
+
+									
+								
+								<script>// <!&#91;CDATA&#91;
+								  $('#myTab a').click(function (e) {
+									e.preventDefault()
+									$(this).tab('show')
+								  })
+								// &#93;&#93;>
+								</script>
+					
+				</div>
+									
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends "::vueMere.html.twig" %} {#La vue fille 1 hérite de la vue mère #}
+{% block titre %} 
+
+				<div class="row">
+						<div class="col-sm-6">
+							<div class="panel panel-default">
+							    <div class="panel-heading">
+							        <h4 class="panel-title"><center><h2>{{Salon.nom}} <type="submit" class="glyphicon glyphicon-plus-sign"></h2></center></h4>
+							    </div>
+							</div>
+						</div>
+
+
+						<div class="col-sm-6">
+							<div class="panel panel-default">
+								<div class="panel-heading"><center>Informations Participants</center></div>
+									  <div class="panel-body"><center>
+									  <u>Nombre d'inscrits :</u>  <br>
+									  <u>Liste des participants :</u><br>
+									  </center>
+									  </div>
+								</div>
+						</div>
+				</div>
+{% endblock %}
+{% block menu %} 
+
+						<div class="row">
+							
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs">
+										<li class="active"><a href="#informations" data-toggle="tab">Informations</a></li>
+										<li><a href="#planAcces" data-toggle="tab">Plan d'acces</a></li>
+										<li><a href="#pj" data-toggle="tab">Pieces jointes</a></li>
+										<li><a href="#bilan" data-toggle="tab">Bilan</a></li>
+								</ul>							
+						
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+										<div id="informations" class="tab-pane fade in active">
+										<br>
+											<div class="col-sm-6">
+												<div class="panel panel-primary">
+													<div class="panel-heading"><center>Pratiques</center></div><center>
+													{% for dateSalon in Salon.datesSalon%}
+													<h4><strong>Date: </strong>{{dateSalon.date|date('d-m-Y')}}
+													</h4>
+													<h4><strong>Heure de debut:</strong>{{dateSalon.heureDebut|date('H:i')}}</h4>
+													<h4><strong>Heure de fin:</strong>{{dateSalon.heureFin|date('H:i')}}
+													</h4>													
+													<br>{% endfor %}
+													{%if Salon.dateLimite!=''%}
+													<h4><strong>Date de fin d'inscription: </strong>{{Salon.dateLimite|date('d-m-Y')}}</h4>
+													<br>{% endif %}
+													<h4><strong>Adresse: </strong>{{Salon.adresse}}</h4>
+													{%if Salon.complement!=''%}
+													<h4><strong>Complements: </strong>{{Salon.complement}}</h4>
+													{% endif %}	
+													<h4><strong>Ville: </strong>{{Salon.ville}}</h4>
+													<h4><strong> CP: </strong>{{Salon.codePostal}}</h4>
+													</center>
+												</div>
+											</div>
+											
+												<div class="col-sm-6">
+													<div class="panel panel-primary">
+													<div class="panel-heading"><center>Description du Salon</center></div><center>
+													<br>
+													<p align="justify">{{Salon.description}}
+													</p>
+													</center>
+													<br>
+													</div>										
+													</div>
+												</div>
+
+												
+										<div id="planAcces" class="tab-pane fade">
+										<br>
+										<div class="col-sm-6">
+										<center>
+                                        <h4><strong><u>Lieu:</u> </strong><br><br>
+										{{Salon.adresse}}<br>
+										{%if Salon.complement!=''%}
+										{{Salon.complement}}<br>
+										{% endif %}										
+										{{Salon.codePostal}} - {{Salon.ville}} <br><br>
+										<strong><u>Acces:</u> </strong><br><br>
+										{{Salon.acces}}
+													</h4></center>
+												</div>
+												
+												
+												<div class="col-sm-6">
+												<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.1650471873922!2d-1.5115541849633711!3d43.47802587175922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd510e190b7ba8b7%3A0x7e66263d71787012!2s{{Salon.adresse}}+{{Salon.codePostal}}+{{Salon.ville}}!5e0!3m2!1sfr!2sfr!4v1454183378241" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+												</div>
+										</div>										
+										
+										<div id="pj" class="tab-pane fade">
+										<br>
+										<center><h4>Aucune Piece Jointe n'est disponible pour l'instant.</h4></center>
+												
+										</div>									
+										
+										<div id="bilan" class="tab-pane fade">
+										<br>
+										{%if Salon.Bilan==''%}
+										<center><h4>Aucun Bilan n'est disponible pour l'instant.</h4></center>
+										{% else %}
+										{{Salon.Bilan}}
+										{% endif %}
+										</div>	
+										
+										<script>// <!&#91;CDATA&#91;
+										  $('#myTab a').click(function (e) {
+											e.preventDefault()
+											$(this).tab('show')
+										  })
+										// &#93;&#93;>
+										</script>
+								</div>		
+						</div>
+					</div>								
+						
+						
+{% endblock %}

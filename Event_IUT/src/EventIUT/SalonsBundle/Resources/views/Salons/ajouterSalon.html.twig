@@ -1,0 +1,87 @@
+{% extends "::vueMere.html.twig" %} {#La vue fille 1 hérite de la vue mère #}
+
+
+
+
+
+{% block menu %} 
+
+						<div class="row">
+							
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs">
+										<li class="active"><a href="#informations" data-toggle="tab">Informations</a></li>
+										<li><a href="#planAcces" data-toggle="tab">Plan d'acces</a></li>
+										<li><a href="#pj" data-toggle="tab">Pieces jointes</a></li>
+								</ul>							
+						
+
+								<!-- Tab panes -->
+								<div class="tab-content">
+										<div id="informations" class="tab-pane fade in active">
+										<br>
+													<div class="col-sm-6">
+														<div class="panel panel-primary">
+															<div class="panel-heading"><center>Pratiques</center></div>
+															<form method="post" {{ form_enctype(formulaireSalon) }}> 
+															{{ form_widget(formulaireSalon) }}
+															
+															<center><input type="submit" class="btn btn-primary" /></center>
+															<br>
+															</form>
+														</div>
+													</div>
+													
+													<div class="col-sm-6">
+														<div class="panel panel-primary">
+															<div class="panel-heading"><center>Description du Salon</center></div><center>
+																<br>
+																	<textarea name="" id="" rows="18" cols="68" maxlength="1500" placeholder="Entrez ici la description generale du salon"></textarea>
+																<br>
+															</div>										
+														</div>
+													</div>	
+										
+										
+										<div id="planAcces" class="tab-pane fade">
+												
+													<div class="col-sm-12">
+													<br>
+														<div class="panel panel-primary">
+															<center>	
+																<br>
+																<h4><strong>Lieu : </strong><input type="text" value="" required="required" name="" id=""></strong></h4>
+																<h4><strong>Acces : </strong><input type="text" value="" required="required" name="" id=""></strong></h4>
+																<br>
+																
+															</center>										
+														</div>
+													</div>	
+										</div>			
+										
+										<div id="pj" class="tab-pane fade">
+													<div class="col-sm-12">
+													<br>
+														<div class="panel panel-primary">
+															<center>	
+																<br>
+																<h4 class="panel-title"><center><button type="submit" class="glyphicon glyphicon-download-alt"></button></center></h4>
+																<br>
+															</center>										
+														</div>
+													</div>											
+										</div>									
+
+										
+										<script>// <!&#91;CDATA&#91;
+										  $('#myTab a').click(function (e) {
+											e.preventDefault()
+											$(this).tab('show')
+										  })
+										// &#93;&#93;>
+										</script>
+						</div>
+						
+
+{% endblock %}
+						

@@ -1,0 +1,18 @@
+event_iut_salons_homepage:
+    path:     /homepage/{id}
+    defaults: { _controller: EventIUTSalonsBundle:Salons:homepage }
+event_iut_salons_homepageResponsable:
+    path:     /homepageResponsable
+    defaults: { _controller: EventIUTSalonsBundle:Salons:homepageResponsable }	
+event_iut_salons_voirSalons:
+    pattern:  /voirSalons/{id}
+    defaults: { _controller: EventIUTSalonsBundle:Salons:voirSalons } 
+event_iut_salons_dashboard:
+    pattern:  /dashboard
+    defaults: { _controller: EventIUTSalonsBundle:Salons:dashboard } 
+event_iut_salons_ajouterSalon:
+    pattern:  /ajouterSalon
+    defaults: { _controller: EventIUTSalonsBundle:Salons:ajouterSalon }
+event_iut_salons_recherche:
+    path:     /recherche
+    defaults: { _controller: EventIUTSalonsBundle:Salons:recherche }

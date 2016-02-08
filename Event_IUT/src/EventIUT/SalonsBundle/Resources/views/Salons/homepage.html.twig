@@ -1,0 +1,130 @@
+{% extends "::vueMere.html.twig" %} {#La vue fille 1 hérite de la vue mère #}
+{% block contenuCentral %} 
+				<div class="row">
+				<div class="col-sm-6">
+			         <form method="post" {{form_enctype(formulaireRecherche)}}>
+                               {{form_widget(formulaireRecherche)}}
+							   </form>
+							   </div>
+							   <div class="col-sm-6">
+							   <br>
+							   <span class="input-group-btn">
+                                            <button type="submit" class="btn btn-inverse"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                        </span>			
+							</div>
+				</div>
+				<br>
+{% endblock %}
+{% block menu %} 
+				<div class="row">
+					<div class="col-sm-12">
+												
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs">
+										<li {{li1}}><a href="#aVenir" data-toggle="tab" {{li11}}>Salons à venir</a></li>
+										<li {{li2}}><a href="#passes" data-toggle="tab"{{li22}}>Salons passés</a></li>
+								</ul>
+								<!-- Tab panes -->
+								<div class="tab-content">
+										<div id="aVenir" class="tab-pane fade {{onglet1}}">
+											<table class="table">
+												<tr>
+													<td><strong>Nom  <a href="{{ path('event_iut_salons_homepage',{'id':0})}}"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>  <a href="{{ path('event_iut_salons_homepage',{'id':2})}}"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></strong></td>
+													<td><strong>Date de début  <a href="{{ path('event_iut_salons_homepage',{'id':4})}}"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>  <a href="{{ path('event_iut_salons_homepage',{'id':6})}}"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></strong></td>
+													<td><strong>Date de fin </strong></td>
+													<td><strong>Lieu  <a href="{{ path('event_iut_salons_homepage',{'id':8})}}"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a> <a href="{{ path('event_iut_salons_homepage',{'id':10})}}"> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></strong></td>
+													<td><strong>Horaire</strong></td>
+													<td><strong>Fin d'inscription</strong></td>
+													<td><strong>Inscrits</strong></td>
+													<td><strong>En attente</strong></td>	
+													<td><strong></strong></td>																
+												</tr>
+												{% for salonCourant in tabSalonsAVenir%}
+												<tr>
+													<td>{{salonCourant.nom}}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													{{dateSalon.date|date('d-m-Y')}}{% endfor %}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													{{dateSalon.date|date('d-m-Y')}}{% endfor %}
+													</td>
+													<td>{{salonCourant.ville}}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													{{dateSalon.heureDebut|date('H:i')}}-{{dateSalon.heureFin|date('H:i')}}{% endfor %}
+													</td>
+													<td>
+													{{salonCourant.dateLimite|date('d-m-Y')}}
+													</td>
+													<td></td>
+													<td></td>	
+													<td><a href="{{ path('event_iut_salons_voirSalons',{'id':salonCourant.id})}}" > <button type="submit" class="glyphicon glyphicon-chevron-right" ></button></a></td>								
+												</tr>
+												{% endfor %}										
+											</table>
+										</div>
+										
+										<div id="passes" class="tab-pane fade {{onglet2}}">
+											<table class="table">
+												<tr>
+													<td><strong>Nom  <a href="{{ path('event_iut_salons_homepage',{'id':1})}}"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>  <a href="{{ path('event_iut_salons_homepage',{'id':3})}}"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></strong></td>
+													<td><strong>Date de début  <a href="{{ path('event_iut_salons_homepage',{'id':5})}}"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>  <a href="{{ path('event_iut_salons_homepage',{'id':7})}}"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></strong></td>
+													<td><strong>Date de fin </strong></td>
+													<td><strong>Lieu  <a href="{{ path('event_iut_salons_homepage',{'id':9})}}"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a> <a href="{{ path('event_iut_salons_homepage',{'id':11})}}"> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></strong></td>
+													<td><strong>Horaire</strong></td>
+													<td><strong>Fin d'inscription</strong></td>
+													<td><strong>Inscrits</strong></td>
+													<td><strong>En attente</strong></td>	
+													<td><strong></strong></td>																
+												</tr>										
+												{% for salonCourant in tabSalonsPasse%}
+												<tr>
+													<td>{{salonCourant.nom}}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													        {% if loop.first %}
+															{{dateSalon.date|date('d-m-Y')}}
+                                                            {% endif %}															
+												{% endfor %}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													    {% if loop.last %}
+													        {{dateSalon.date|date('d-m-Y')}}
+															{% endif %}	
+													{% endfor %}
+													</td>
+													<td>{{salonCourant.ville}}
+													</td>
+													<td>{% for dateSalon in salonCourant.datesSalon%}
+													{% if loop.first %}
+													{{dateSalon.heureDebut|date('H:i')}}-{{dateSalon.heureFin|date('H:i')}}
+													{% endif %}	
+													{% endfor %}
+													</td>
+													<td>
+													{%if salonCourant.dateLimite==NULL%}										
+										{% else %}
+										{{salonCourant.dateLimite|date('d-m-Y')}}
+										{% endif %}													
+													</td>
+													<td></td>
+													<td></td>	
+													<td><a href="{{ path('event_iut_salons_voirSalons',{'id':salonCourant.id})}}" > <button type="submit" class="glyphicon glyphicon-chevron-right" ></button></a></td>								
+												</tr>
+												{% endfor %}											
+											</table>										
+										</div>
+									
+								
+								<script>// <!&#91;CDATA&#91;
+								  $('#myTab a').click(function (e) {
+									e.preventDefault()
+									$(this).tab('show')
+								  })
+								// &#93;&#93;>
+								</script>
+					</div>
+				</div>
+									
+{% endblock %}
