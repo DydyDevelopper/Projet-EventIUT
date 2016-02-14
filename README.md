@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Standard Edition
 ========================
 
@@ -67,3 +68,7 @@ Enjoy!
 [11]: http://symfony.com/doc/2.7/cookbook/logging/monolog.html
 [12]: http://symfony.com/doc/2.7/cookbook/assetic/asset_management.html
 [13]: http://symfony.com/doc/2.7/bundles/SensioGeneratorBundle/index.html
+=======
+# Projet-EventIUT
+Application web permettant la gestion des événements de l'IUT de Bayonne - campus Montaury - groupe composé de 4 membres de 2eme année de DUT INFO
+>>>>>>> aac297f1838b4b690b693231c66e512e223e136a

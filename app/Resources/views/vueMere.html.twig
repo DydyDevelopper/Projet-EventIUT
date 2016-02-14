@@ -1,25 +1,97 @@
 {# app/Resources/views/vueMere.html.twig #}
-
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>{% block title %} Biblinum {% endblock %}</title>
+<html>  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+        <link rel="icon" type="image/png" href="{{ asset('img/chapeau.png') }}" />
+         <title>
+            {% block title %}EventIUT {% endblock %}
+        </title>
         {% block stylesheets %}{% endblock %}
     </head>
-    <body>
-        {% block header %}
-           <h1>Bienvenue sur ProStage</h1> 
-		   <h2>Les stages proposé pour le département Informatique</h2>
-        {% endblock %}
-	   
-        {% block menuPropreAuBundle %} 
-		{% endblock %}
-		
-        {% block contenuCentral %}
-		{% endblock %}
-		
-        {% block footer %} IUT de Bayonne département Informatique
-		{% endblock %}
+<body>
+
+    
+            <div class="container">
+                <!-- LIGNE 1 -->
+                <div class="row">
+                    <div class="col-sm-9">
+                            <div class="jumbotron">
+                            <center> <a href="{{ path('event_iut_salons_homepage',{'id':6})}}" style="text-decoration:none;"><font color="#303030"><h1><span class="glyphicon glyphicon-education" aria-hidden="true"></span> EventIUT</h1></font></a> </center>
+							
+							
+                            </div>
+                    </div>
+                    <div class="col-sm-3">
+					<br>
+					<br>
+							<form class="form-signin">
+                            <input type="text" id="identifiant" class="form-control" placeholder="Identifiant" required autofocus>
+                            <label for="inputPassword" class="sr-only"></label>
+                            <input type="password" id="motPasse" class="form-control" placeholder="Mot de passe" required>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button> 
+                          </form>
+                    </div>
+                </div>
+                
+                
+                <!-- LIGNE TITRE --> 
+                <div class="row">
+                <div class="col-sm-12">
+                {% block titre %} {% endblock %}     
+                </div>
+                </div>  
+                
+                <!-- LIGNE 2 -->
+                
+
+                {% block contenuCentral %} {% endblock %}     
+       
+                
+                <!-- LIGNE 3 -->                                    
+                <div class="row">
+                    <div class="col-sm-12">
+                {% block menu %} {% endblock %}
+                    </div>          
+                </div>              
+                
+                <br><br><br>
+                
+                
+                <!-- LIGNE 4 -->                                    
+                <div class="row">
+                    <div class="col-sm-6">
+                {% block contenu1 %} {% endblock %}
+                    </div>      
+                    <div class="col-sm-6">
+                {% block contenu2 %} {% endblock %}
+                    </div>                      
+                </div>  
+                
+        <!-- LIGNE 5 -->
+        <div class="row">
+            <div class="col-sm-12>
+            {% block footer %}
+			<footer>
+            <div class="row">
+                    <div class="col-sm-12">
+						<br><br><br>
+                            <div class="panel panel-default">
+                                <center>
+                                    <div class="panel-heading">
+                                    <strong> Réalisation par <a href="https://www.facebook.com/antoine.arnaudin" style="text-decoration:none;" title="Profil Facebook Antoine ARNAUDIN"><font color="#303030">Antoine ARNAUDIN</font></a>, Thibault LARZABAL</font></a>, <a href="https://www.facebook.com/dylan.sezat.5?fref=ts" style="text-decoration:none;" title="Profil Facebook Dylan SEZAT"><font color="#303030">Dylan SEZAT</font></a>, <a href="https://www.facebook.com/hugo.uranga?fref=ts" style="text-decoration:none;" title="Profil Facebook Hugo URANGA"><font color="#303030">Hugo URANGA</font></a> Département Informatique 2015-2016</strong>
+                                    </div>
+                                </center>
+                            </div>
+                    </div>
+            </div> 
+                    </footer>
+                    {% endblock %}
+            </div>
+        </div>
+    </div>
+        <script type="text/javascript" src="{{ asset('js/jquery.js')}}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap.js')}}"></script>
     </body>
 </html>
